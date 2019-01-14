@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Http, Headers} from '@angular/http';
 import {Photo} from '../models/Photo';
-import {Observable}     from 'rxjs/Observable';
+import {Observable}     from 'rxjs';
 
 
 @Injectable()
