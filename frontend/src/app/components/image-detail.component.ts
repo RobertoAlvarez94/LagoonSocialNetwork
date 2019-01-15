@@ -36,8 +36,39 @@ export class ImageDetail {
           },
           error => console.log(error)
         )
-      }
-    )
+      },
+      error => console.log(error)
+    );
+  }
+
+  goBack() {
+    window.history.back();
+  }
+
+  ngOnInit(){
 
   }
+
+  likeDisplay() {
+    if(this.like =='Like') {
+      this.like="Unlike";
+      this.user.likedPhotoList.push(this.photo);
+      this.photo.likes+=1;
+      this.userService.updateUser(this.user).subscribe();
+      this.photoService.updatePhoto(this.photo).subscribe();
+    } else {
+      this.like="like";
+
+      for(let i=0; i<this.user.likedPhotoList.length; i++){
+        if(this.user.likedPhotoList[i].photoId == this.photo.photoId){
+          this.user.likedPhotoList.splice(i, 1);
+        }
+      }
+
+      this.photo.likes=-1;
+      this.userService.updateUser(this.user).subscribe();
+      this.photoService.updatePhoto(this.photo).subscribe();
+    }
+  }
+  
 }
