@@ -31,7 +31,7 @@ export class ImageDetail {
             if (this.user.likedPhotoList.filter(photo => photo.photoId == this.photo.photoId)[0]) {
               this.like="Unlike";
             } else {
-              this.like="Like"l;
+              this.like="Like";
             }
           },
           error => console.log(error)
@@ -70,5 +70,5 @@ export class ImageDetail {
       this.photoService.updatePhoto(this.photo).subscribe();
     }
   }
-  
+
 }

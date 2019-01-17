@@ -16,7 +16,7 @@ export class ImageComments{
   user: User = new User();
   newComment = new Comment();
 
-  constructor(private userService: UserService, private commentService: CommentService, private photo: Photo) {
+  constructor(private userService: UserService, private commentService: CommentService, private photoService: PhotoService) {
     console.log(this.photo);
     this.userService.getUserByName(localStorage.getItem("currentUserName")).subscribe(
       user => {
@@ -45,6 +45,6 @@ export class ImageComments{
       )
     );
 
-    this.newComment = newComment();
+    this.newComment = new Comment();
   }
 }
