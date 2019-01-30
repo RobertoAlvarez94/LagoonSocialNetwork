@@ -51,7 +51,7 @@ public class PhotoResource {
 
     @RequestMapping(value = "/photo/add", method = RequestMethod.POST)
     public Photo addPhoto(@RequestBody Photo photo){
-        photo.setImageName((imageName));
+        photo.setImageName(imageName);
         return photoService.save(photo);
     }
 

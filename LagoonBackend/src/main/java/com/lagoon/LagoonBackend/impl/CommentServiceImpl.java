@@ -4,9 +4,12 @@ import com.lagoon.LagoonBackend.dao.CommentDao;
 import com.lagoon.LagoonBackend.model.Comment;
 import com.lagoon.LagoonBackend.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CommentServiceImpl implements CommentService {
 
     @Autowired
@@ -23,7 +26,9 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public Comment findOne(Long commentId) {
-        return commentDao.findOne(commentId);
+    public Comment findByCommentId(Long commentId) {
+        return commentDao.findByCommentId(commentId);
     }
+
+
 }

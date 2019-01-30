@@ -37,7 +37,6 @@ export class ImageComments{
     this.newComment.photo = this.photo;
     this.newComment.userName = this.user.userName;
     this.newComment.photoId = this.photo.photoId;
-
     this.commentService.addComment(this.newComment).subscribe(
       photo => this.photoService.getPhotoById(this.photo.photoId).subscribe(
         photo => this.photo = JSON.parse(JSON.parse(JSON.stringify(photo))._body),

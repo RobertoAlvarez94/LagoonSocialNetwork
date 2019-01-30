@@ -1,5 +1,5 @@
 import {Comment} from './comment';
-import {User} from './user';
+import {User} from './User';
 
 export class Photo{
   public photoId: number;

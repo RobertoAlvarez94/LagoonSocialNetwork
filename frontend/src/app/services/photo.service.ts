@@ -14,7 +14,7 @@ export class PhotoService {
   }
 
   getPhotoById(photoId: number){
-    let tokenUrl1 = "http://localhost:8080/rest/photo/photoid";
+    let tokenUrl1 = "http://localhost:8080/rest/photo/photoId";
     let headers1 = new Headers({'Content-Type': 'application/json', 'Authorization': 'Bearer ' + localStorage.getItem("token")});
     return this.http.post(tokenUrl1, JSON.stringify(photoId),{headers: headers1});
   }

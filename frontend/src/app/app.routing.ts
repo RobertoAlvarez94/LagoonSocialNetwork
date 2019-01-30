@@ -1,8 +1,8 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './components/home.component';
-import { Register } from './components/register.component';
+import {HomeComponent} from './components/home.component';
+import {Register} from './components/register.component';
 import {Login} from './components/login.component';
 import {MyAlbum} from './components/my-album.component';
 import {AddPhoto} from './components/add-photo.component';
@@ -35,7 +35,7 @@ const appRoutes: Routes = [
     component: AddPhoto
   },
   {
-    path: 'image-detail/id',
+    path: 'image-detail/:id',
     component: ImageDetail
   }
 ];
